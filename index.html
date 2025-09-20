@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sürdürülebilir Moda | Dönüşüm Seninle Başlar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f7f6;
+      color: #444;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    header {
+      background-color: #ffffff;
+      padding: 1.5rem 0;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #2e7d32;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #4CAF50;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1579836376840-975949d21464');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      color: white;
+      padding: 15rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-content {
+      max-width: 700px;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      padding: 0.9rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #2e7d32;
+      transform: translateY(-3px);
+    }
+    .section-content {
+      padding: 5rem 0;
+    }
+    .section-bg-light {
+      background-color: #ffffff;
+    }
+    h2 {
+      text-align: center;
+      color: #2e7d32;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      font-weight: 600;
+    }
+    .about-grid, .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .about-item {
+      text-align: center;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .about-item:hover {
+      transform: translateY(-10px);
+    }
+    .about-item i {
+      font-size: 3rem;
+      color: #4CAF50;
+      margin-bottom: 1rem;
+    }
+    .process-steps {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .step {
+      text-align: center;
+      flex: 1;
+      min-width: 200px;
+    }
+    .step-icon {
+      width: 80px;
+      height: 80px;
+      background-color: #4CAF50;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem auto;
+      color: white;
+      font-size: 2rem;
+    }
+    .blog-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+    .blog-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    .blog-card h3 {
+      padding: 1rem 1.5rem 0;
+    }
+    .blog-card p {
+      padding: 0 1.5rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .read-more {
+      display: block;
+      padding: 1rem 1.5rem;
+      color: #4CAF50;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .read-more:hover {
+      color: #2e7d32;
+    }
+    .contact-form form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    input, textarea {
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #4CAF50;
+    }
+    footer {
+      background: #2e7d32;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 0 1rem 0;
+      margin-top: 3rem;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        padding: 7rem 1rem;
+      }
+      .process-steps {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Sürdürülebilir Moda</div>
+        <ul>
+          <li><a href="#about">Hakkımızda</a></li>
+          <li><a href="#process">Nasıl Çalışır?</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">İletişim</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Dönüşüm Seninle Başlar</h1>
+      <p>Modada sürdürülebilirliği destekle, dünyayı birlikte daha iyi bir yer haline getirelim.</p>
+      <a href="#about" class="btn">Daha Fazla Bilgi</a>
+    </div>
+  </section>
+  <section id="about" class="section-content section-bg-light">
+    <div class="container">
+      <h2>Hakkımızda</h2>
+      <div class="about-grid">
+        <div class="about-item">
+          <i class="fas fa-leaf"></i>
+          <h3>Çevre Dostu</h3>
+          <p>Doğaya zarar vermeyen, sürdürülebilir materyallerle üretim yapıyoruz.</p>
+        </div>
+        <div class="about-item">
+          <i class="fas fa-recycle"></i>
+          <h3>Geri Dönüşüm</h3>
+          <p>Kullanılmış tekstil ürünlerini yeniden değerlendiriyor, döngüsel ekonomiye katkı sağlıyoruz.</p>
+        </div>
+        <div class="about-item">
+          <i class="fas fa-users"></i>
+          <h3>Toplumsal Fayda</h3>
+          <p>Toplumsal bilinci artırıyor, sürdürülebilir modayı yaygınlaştırıyoruz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="process" class="section-content">
+    <div class="container">
+      <h2>Nasıl Çalışır?</h2>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-icon"><i class="fas fa-tshirt"></i></div>
+          <h4>Kıyafetini Gönder</h4>
+          <p>Kullanmadığın kıyafetleri bize gönder.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon"><i class="fas fa-sync-alt"></i></div>
+          <h4>Dönüştürelim</h4>
+          <p>Kıyafetlerin sürdürülebilir şekilde dönüştürülsün.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon"><i class="fas fa-gift"></i></div>
+          <h4>Yeni Hayat</h4>
+          <p>Dönüşen ürünler yeni sahiplerine ulaşsın.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="blog" class="section-content section-bg-light">
+    <div class="container">
+      <h2>Blog</h2>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Sürdürülebilir Moda">
+          <h3>Sürdürülebilir Moda Nedir?</h3>
+          <p>Sürdürülebilir moda, çevreye ve topluma duyarlı üretim süreçlerini kapsar...</p>
+          <a href="#" class="read-more">Devamını Oku</a>
+        </div>
+        <div class="blog-card">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Geri Dönüşüm">
+          <h3>Geri Dönüşümün Önemi</h3>
+          <p>Tekstil atıklarının geri dönüşümü, kaynakların korunmasına yardımcı olur...</p>
+          <a href="#" class="read-more">Devamını Oku</a>
+        </div>
+        <div class="blog-card">
+          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b" alt="Toplumsal Fayda">
+          <h3>Toplumsal Bilinç ve Moda</h3>
+          <p>Toplumsal bilinçle hareket eden markalar, sürdürülebilirliği yaygınlaştırıyor...</p>
+          <a href="#" class="read-more">Devamını Oku</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="section-content">
+    <div class="container">
+      <h2>İletişim</h2>
+      <div class="contact-form">
+        <form>
+          <input type="text" placeholder="Adınız" required>
+          <input type="email" placeholder="E-posta" required>
+          <textarea rows="5" placeholder="Mesajınız" required></textarea>
+          <button type="submit" class="btn">Gönder</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      &copy; 2024 Sürdürülebilir Moda | Tüm hakları saklıdır.
+    </div>
+  </footer>
+</body>
+</html>
